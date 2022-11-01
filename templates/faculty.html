@@ -1,0 +1,31 @@
+{% extends './common/base.html' %}
+{%  load static %}
+
+{%  block content %}
+
+    <section class="py-5 mt-5">
+        <div class="row">
+                {% if Faculty %}
+                {% for i in Faculty %}
+                <div class="col-md-4">
+                    <div class="card special-skill-item border-0">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{i.name}}</h3>
+                            <p class="card-text">{{i.designation}}</p>
+                            <p class="card-text">{{i.department}}</p>
+                            <span>Qualifications: {{i.qualifications}}</span>
+                            <span>Created At: {{i.created_at}}</span>
+                            <span>Updated At: {{i.updated_at}}</span>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <h1 style="text-align: center; color: #172c3f">No Faculty</h1>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
